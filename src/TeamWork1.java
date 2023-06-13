@@ -9,7 +9,7 @@ public class TeamWork1 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int numlen = 3;
         String answer = randNums(numlen);
-        System.out.println(answer);
+//        System.out.println(answer);
         System.out.println("컴퓨터가 숫자를 생성하였습니다. 답을 맞춰보세요!");
         System.out.println("중복없이 " + numlen + "개의 숫자만 입력해주세요.");
         int ball; //contain
@@ -17,6 +17,7 @@ public class TeamWork1 {
         int count = 0;
         while (true) {
             String input = br.readLine();
+            // 입력시 에러가 생길 수 있는 값들 처리
             try {
                 Integer.parseInt(input);
                 input.charAt(numlen-1);
@@ -43,6 +44,7 @@ public class TeamWork1 {
             StringBuilder sb = new StringBuilder();
             count++;
             sb.append(count).append("번째 시도 : ").append(input).append("\n");
+            // 입력한 값과 정답을 비교하여 strike, ball 증가
             for (int i = 0; i < 3; i++) {
                 String num = "" + input.charAt(i);
                 if (answer.contains(num)) {
@@ -53,6 +55,7 @@ public class TeamWork1 {
                     }
                 }
             }
+            // strike 또는 ball만 있는경우
             if (ball == 3) {
                 sb.append(ball).append("B");
             } else if (strike == 3) {
@@ -66,7 +69,7 @@ public class TeamWork1 {
             System.out.println(sb);
         }
     }
-
+// 0에서 9까지의 랜덤한 숫자를 일정 갯수만큼 생성
     private static String randNums(int numlen) {
         StringBuilder sb = new StringBuilder();
         int randNum;
@@ -81,7 +84,7 @@ public class TeamWork1 {
         }
         return sb.toString();
     }
-
+// 주어진 string에 중복되는 character가 있는지 검사
     public static boolean hasDuplicateCharacters(String str) {
         StringBuilder sb = new StringBuilder();
 
