@@ -31,5 +31,3 @@ bin/
 # Intellij file
 *.iml
 .idea
-!/.idea/
-!/NumBaseBall.iml
