@@ -75,7 +75,7 @@ public class TeamWork1 {
         int randNum;
         for (int i = 0; i < numlen; i++) {
             while (true) {
-                randNum = (int) (Math.random() * 9);
+                randNum = (int) (Math.random() * 10);
                 if (!sb.toString().contains("" + randNum)) {
                     break;
                 }
